@@ -1,0 +1,93 @@
+<!doctype php>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Style CSS -->  
+    <link rel="stylesheet" href="css/style.css" >  
+    
+    <title>Centenario del Roverismo</title>
+  </head>
+  <body>
+  
+      <header>
+        <div class="container">
+            <div class="row">
+                <div class="col"> <img src="./img/header.png" class="img-fluid" alt="Responsive image"></div>
+            </div>
+            <div class="row">
+                <div class="col title-header"> <h1>Centenario del roverismo</h1></div>
+            </div>
+        </div>
+      </header>
+      
+      
+      <div class="container">
+      
+      
+<!-- Inserimento Nome Comunità R/S e Gruppo-->
+    <div class="row justify-content-md-center">
+    <div class="col-md-auto"> 
+    <form enctype="multipart/form-data" class="" action="putimage.php" method="POST">
+
+        <div class="row">
+        <div class="col-12">
+        <div class="form-group">
+        <label for="formGroupExampleInput" class="label-typ">Inserisci il nome della comunità R/S e del tuo gruppo</label>
+        <input type="text" class="form-control label-typ" id="formGroupExampleInput" placeholder="Nome comunità R/S e Gruppo" name="gruppo">
+        </div>
+        </div>
+        </div> 
+            
+        <div class="row">
+        <div class="col-12">
+        <div class="form-group">
+        <label for="formGroupExampleInput2" class="label-typ">Scrivi una breve descrizione dell'immagine</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" name="descrizione">
+        </div>
+        </div>
+        </div>
+        
+
+        
+        <div class="row form-caricamento">
+        <div class="col-12">
+        <div class="custom-file">
+        <input type="hidden" name="MAX_FILE_SIZE" value="300000000000000">
+        <input type="file"  id="customFile" name="immagine">
+        </div>
+        </div>    
+        </div>
+        
+        <!-- Pulsante di invio-->
+        <div class="row pulsante-submit">
+            <div class="col-12">
+            <input class="btn btn-outline-success btn-lg btn-block label-typ" type="submit" value="Invia la foto">
+            </div>
+        </div>
+        
+    </form>
+    </div>  
+    </div>   
+     
+      
+      
+      
+      
+      
+      
+    </div>    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
