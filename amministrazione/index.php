@@ -16,6 +16,39 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
 </head>
 <body>
 <h1>Tabella di amministrazione</h1>
+
+<?php 
+$db = new SQLite3('./../RS.db');
+if(!$db)
+{
+    die("Errore Sqlite: ");
+}
+$approvate=0;
+$inattesa=0;
+$declinate=0;
+
+$results = $db->query('SELECT * FROM immagini');
+while ($row = $results->fetchArray()) {
+
+ $statoN = $row['stato'];
+ 
+
+ if ($statoN == 0){
+     $inattesa +=1;
+ } else if ($statoN == 1){
+     $approvate +=1;
+ } elseif ($statoN == 2){ 
+     $declinate +=1;
+ } else {
+ }
+}
+
+echo "In attesa: <b> $inattesa </b> | ";
+echo "Approvate: <b> $approvate </b> | ";
+echo "Declinate: <b> $declinate </b> ";
+
+?>
+
 <table id="tabella">
     <thead>
         <tr>
@@ -28,13 +61,8 @@ if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
     </thead>
     <tbody>
 <?php
-$db = new SQLite3('./../RS.db');
-if(!$db)
-{
-    die("Errore Sqlite: ");
-}
 
-$results = $db->query('SELECT * FROM immagini');
+
 while ($row = $results->fetchArray()) {
  $timestamp = $row['timestamp'];
  $gruppo = $row['gruppo'];
@@ -85,7 +113,11 @@ while ($row = $results->fetchArray()) {
 
 <script>
 $(document).ready( function () {
-    $('#tabella').DataTable();
+    $('#tabella').DataTable({
+        "order": [[ 3, "desc" ],[ 0, "desc" ]],
+        "pageLength": 50,
+        "lengthMenu": [[25, 50, 100, -1], [25, 50, 100, "All"]]
+    });
 } );
 </script>
 
