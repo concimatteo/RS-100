@@ -22,6 +22,8 @@ pass:<input type="password" name="password"><br>
          $_SESSION['username'] = $_POST['username'];
          $_SESSION['password'] = $_POST['password'];
          echo 'Logged in successfully.';
+         header('Location: index.php');
+         exit;
        }else {
          echo 'Invalid username or password given.';
        }

@@ -2,7 +2,7 @@
 
 if (!$included) { die(); }
 
-$usernames = array("sam", "user1");
-$passwords = array("sam" => "testpassword", "user1" => "testpassword2");
+$usernames = array("admin", "user1");
+$passwords = array("admin" => "admin", "user1" => "testpassword2");
 
 ?>

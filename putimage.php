@@ -193,7 +193,7 @@ if(!$db)
     die("Errore Sqlite: ");
 }
 
-if ($db->query('CREATE TABLE IF NOT EXISTS immagini (id INTEGER PRIMARY KEY, gruppo TEXT, descrizione TEXT, nomefile TEXT, chiave TEXT, stato INTEGER)')) {
+if ($db->query('CREATE TABLE IF NOT EXISTS immagini (id INTEGER PRIMARY KEY, gruppo TEXT, descrizione TEXT, nomefile TEXT, chiave TEXT, stato INTEGER, Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)')) {
     echo "Query successful."; // Works
 } else {
     echo "Query failed."; // Will also work
@@ -239,12 +239,13 @@ $message .=
 <style> p {color:green} </style>
 </head>
 <body>
-
-A line above
+È arrivata una nuova immagine:
 <br>
 <img src='cid:http://localhost/rs/immagini/$filename'>
-<br>
-a line below
+<br><b>Gruppo: </b>$gruppo
+<br><b>Descrizione: </b>$descrizione
+<h1><a href='http://localhost/rs/changestatus.php?nomefile=$filename&chiave=$chiave&stato=1'>Approva<a></h1>
+<h1><a href='http://localhost/rs/changestatus.php?nomefile=$filename&chiave=$chiave&stato=2'>Declina<a></h1>
 </body>
 
 </html>"."\n\n".

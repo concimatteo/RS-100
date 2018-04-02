@@ -13,6 +13,7 @@ $stato = $_GET['stato'];
 $nomefile = $_GET['nomefile'];
 $chiave = $_GET['chiave'];
 
+
 $db = new SQLite3('RS.db');
 if(!$db)
 {
@@ -23,6 +24,7 @@ $query = "UPDATE immagini SET stato = $stato WHERE nomefile == '$nomefile' AND c
 
 if ($db->query($query)) {
     echo "Stato immagine aggiornato"; // Works
+    echo "<br><a href='amministrazione/'>Torna all'amministrazione</a>";
 } else {
     echo "Qualcosa è andato storto..."; // Will also work
 }
