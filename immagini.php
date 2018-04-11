@@ -1,14 +1,22 @@
 <html>
 <head>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-<style>
-.grid-item { width: 200px; }
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>   
+.grid-item { width: 300px; margin-bottom:15px; }
 </style>
-<head>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
 <body>
+<div class="container-fluid">
+
 <header>
 <h1>Un po' di header</h1>
 </header>
@@ -33,32 +41,52 @@ while ($row = $results->fetchArray()) {
    
    
     echo "<div class='grid-item'>";
-    echo "<img src='immagini/$nomefile' width='190' aligh='center'></img>";
-    echo "<p>$gruppo</p>";
-    echo "<p>$descrizione</p>";
+    echo "<img src='immagini/$nomefile' width='280' align='center' type='button' data-toggle='modal' data-target='#ModalImmagine'></img>";
     echo "</div>";
-}
 
-?>
+    }
+    ?>
 
 </div>
 
+<div class="modal fade" id="ModalImmagine" tabindex="-1" role="dialog" aria-labelledby="ModalImmagineTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalImmagineTitle"><?php echo $gruppo;?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <?php echo "<img src='immagini/$nomefile' class='col-12'"; ?>
+      </div>
+      <div class="modal-footer">
+      <?php echo $descrizione;?>
+      </div>
+    </div>
+  </div>
+</div>
 
 </article>
+
 
 <footer>
 <h4>piè di pagina...</h4>
 </footer>
 
+</div>
+
+
 
 <script>
-
 $('.grid').masonry({
   // options
   itemSelector: '.grid-item',
-  columnWidth: 200
+  columnWidth: 300
 });
-
 </script>
+
+
 </body>
 </html>
