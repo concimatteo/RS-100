@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+<div class="container-fluid">
 
 <header style="background-image: url(img/header-RN.jpg)" class="background-header">
         <div class="container-fluid">
@@ -24,18 +24,14 @@
                 <div class="col"> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image float-left" alt="Responsive image"></div>
                 <div class="col"> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
             </div>
-
+            <div class="row">
+                <div class="col title-header"> <h1 class="">Centenario del roverismo</h1></div>
+            </div>
         </div>
 </header>
 
-
-<div class="container-fluid">
-<div class="row">
-<p></p>
-</div>
-
 <article>
-<div class="card-columns">
+<div class="grid">
 
 <?php
 
@@ -53,12 +49,8 @@ while ($row = $results->fetchArray()) {
     $nomefile = $row['nomefile'];
    
    
-    echo "<div class='card'>";
-    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#ModalImmagine'></img>";
-    echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>$gruppo</h5>";
-    echo "<p class='card-text'>$descrizione</p>";
-    echo "</div>";
+    echo "<div class='grid-item'>";
+    echo "<img src='immagini/$nomefile' width='280' align='center' type='button' data-toggle='modal' data-target='#ModalImmagine'></img>";
     echo "</div>";
 
     }
