@@ -18,15 +18,15 @@
 <body>
 
 
-<header style="background-image: url(img/header-RN.jpg)" class="background-header">
+<header style="background-image: url(img/header-watercolor-red.png)" class="background-header">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col"> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image float-left" alt="Responsive image"></div>
-                <div class="col"> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+            <div class="row justify-content-between">
+                <div class="col-3 "> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image" alt="Responsive image"></div>
+                <div class="col-3 "> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
             </div>
-
+            
         </div>
-</header>
+ </header>
 
 
 <div class="container-fluid">

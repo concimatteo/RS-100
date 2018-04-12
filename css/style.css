@@ -29,7 +29,8 @@
 
 .background-header{
     background-position: center;
-    background: size 100%;;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 
 }
@@ -37,6 +38,8 @@
 .header-image{
     max-height: 100px;
     width: auto;
-    margin-top:10px;
-    margin-bottom: 10px;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left:20px;
 }
