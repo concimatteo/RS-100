@@ -29,12 +29,13 @@
 
 .background-header{
     background-position: center;
-    background-size: cover;
+    background: size 100%;;
+
 
 }
 
 .header-image{
-    max-height: 150px;
+    max-height: 100px;
     width: auto;
     margin-top:10px;
     margin-bottom: 10px;
