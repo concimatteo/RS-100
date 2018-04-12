@@ -26,3 +26,17 @@
     font-weight: 200;
     font-size: 25;
 }
+
+.background-header{
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #cccccc;
+    background-image: url(img/header-RN.png);
+}
+
+.header-image{
+    max-height: 100;
+    width: auto;
+}
