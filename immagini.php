@@ -11,20 +11,23 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 <div class="container-fluid">
 
-<header>
+<header style="background-image: url(img/header-RN.jpg)" class="background-header">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col"> <img src="./img/header.png" class="img-fluid" alt="Responsive image"></div>
+                <div class="col"> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image float-left" alt="Responsive image"></div>
+                <div class="col"> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
             </div>
             <div class="row">
-                <div class="col title-header"> <h1>Centenario del roverismo</h1></div>
+                <div class="col title-header"> <h1 class="">Centenario del roverismo</h1></div>
             </div>
-
+        </div>
 </header>
 
 <article>
