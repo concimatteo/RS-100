@@ -15,29 +15,37 @@
 
 </head>
 
-<body>
+<body style="background-image: url(img/body-background.png);" class="body-background">
 
 
-<header style="background-image: url(img/header-watercolor-red.png)" class="background-header">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="col-3 "> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image" alt="Responsive image"></div>
-                <div class="col-3 "> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+<!-- Header --> 
+<header style="background-image: url(img/header-watercolor.png)" class="background-header">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <!-- Visible on MD --> 
+                    <div class="col-3 d-none d-sm-block"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-none d-sm-block"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image" alt="Responsive image"></div>
+                    <div class="col-3 d-none d-sm-block"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+                    <!-- Visible on XS -->
+                    <div class="col-12 align-self-center align-content-center d-block d-sm-none"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image-XS" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+                </div>
+                
             </div>
-            
-        </div>
  </header>
 
-
+<!-- Corpo --> 
 <div class="container-fluid">
-<div class="row">
-<p></p>
-</div>
+<div class="row justify-content-center">
+<div class="col-md-10 col-xs-12">
 
 <article>
 <div class="card-columns">
 
 <?php
+
+
 
 $db = new SQLite3('RS.db');
 if(!$db)
@@ -51,7 +59,7 @@ while ($row = $results->fetchArray()) {
     $gruppo = $row['gruppo'];
     $descrizione = $row['descrizione'];
     $nomefile = $row['nomefile'];
-   
+
    
     echo "<div class='card'>";
     echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#ModalImmagine'></img>";
@@ -88,12 +96,18 @@ while ($row = $results->fetchArray()) {
 </article>
 
 
-<footer>
-<h4>piè di pagina...</h4>
-</footer>
-
+</div>
+</div>
 </div>
 
+<!-- Footer -->
+<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-xs-12"><p class="text-white text-center footer-alignement"></p></div>
+        </div>
+    </div>
+</footer>
 
 
 <script>

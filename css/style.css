@@ -4,7 +4,7 @@
 }
 
 .label-typ {
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .form-caricamento {
@@ -31,15 +31,71 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height:110px;
+}
 
+.background-footer{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height:110px;
+}
 
+.body-background{
+    background-position:center;
+    background-size: cover;
+    background-repeat: repeat-y;
+    top: 200px;
 }
 
 .header-image{
     max-height: 100px;
     width: auto;
-    margin-top:20px;
-    margin-bottom: 20px;
+    margin-top:10px;
+    margin-bottom: 30px;
     margin-right: 20px;
     margin-left:20px;
+}
+
+.title-image{
+   margin-top: -20px;
+}
+
+.title-image-XS{
+    margin-top: 10px;
+ }
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .footer-alignement{
+    margin-top: 50px;
+
+  }
+
+  
+
+
+  
+@media (max-width:575px){
+    
+    .background-header{
+        min-height: 250px;
+    }
+
+    .corpo-margin{
+        margin-top:-50px;
+    }
+
+    .body-background{
+        background-position:center;
+        background-size: cover;
+        background-repeat: repeat-y;
+    }
 }

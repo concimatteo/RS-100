@@ -13,20 +13,28 @@
     
     <title>Centenario del Roverismo</title>
   </head>
-  <body>
-  
-        <header style="background-image: url(img/header-watercolor-red.png)" class="background-header">
+  <body style="background-image: url(img/body-background.png);" class="body-background">
+
+<!-- Header --> 
+        <header style="background-image: url(img/header-watercolor.png)" class="background-header">
             <div class="container-fluid">
-                <div class="row justify-content-between">
-                    <div class="col-3 "> <img src="./img/Logo-100RS-square.jpg" class="img-fluid rounded header-image" alt="Responsive image"></div>
-                    <div class="col-3 "> <img src="./img/logo-FIS-square.jpg" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+                <div class="row justify-content-center">
+                    <!-- Visible on MD --> 
+                    <div class="col-3 d-none d-sm-block"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-none d-sm-block"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image" alt="Responsive image"></div>
+                    <div class="col-3 d-none d-sm-block"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
+                    <!-- Visible on XS -->
+                    <div class="col-12 align-self-center align-content-center d-block d-sm-none"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image-XS" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
                 </div>
                 
             </div>
-     </header>
-      
-      
-      <div class="container-fluid" style="margin-top:30px;">
+        </header>
+ 
+
+<!-- Corpo -->     
+    <div class="container-fluid corpo-margin">
       
       
 <!-- Inserimento Nome Comunità R/S e Gruppo-->
@@ -37,7 +45,7 @@
         <div class="row">
         <div class="col-12">
         <div class="form-group">
-        <label for="formGroupExampleInput" class="label-typ font-weight-light">Inserisci il nome della comunità R/S e del tuo gruppo</label>
+        <label for="formGroupExampleInput" class="label-typ ">Inserisci il nome della comunità R/S e del tuo gruppo</label>
         <input type="text" class="form-control label-typ" id="formGroupExampleInput" placeholder="Nome comunità R/S e Gruppo" name="gruppo">
         </div>
         </div>
@@ -46,7 +54,7 @@
         <div class="row">
         <div class="col-12">
         <div class="form-group">
-        <label for="formGroupExampleInput2" class="label-typ font-weight-light">Scrivi una breve descrizione dell'immagine</label>
+        <label for="formGroupExampleInput2" class="label-typ ">Scrivi una breve descrizione dell'immagine</label>
         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="" name="descrizione">
         </div>
         </div>
@@ -59,7 +67,7 @@
                 <div class="custom-file">
                     <input type="hidden" name="MAX_FILE_SIZE" value="300000000000000">
                     <input type="file" class="custom-file-input" id="customFile" name="immagine">
-                    <label class="custom-file-label font-weight-light" for="customFile">Seleziona Immagine</label>
+                    <label class="custom-file-label" for="customFile">Seleziona Immagine</label>
                 </div>
             </div>    
         </div>
@@ -67,21 +75,25 @@
         <!-- Pulsante di invio-->
         <div class="row pulsante-submit">
             <div class="col-12">
-            <input class="btn btn-outline-success btn-lg btn-block label-typ" type="submit" value="Invia la foto">
+            <input class="btn btn-success btn-lg btn-block label-typ" type="submit" value="Invia la foto">
             </div>
         </div>
         
     </form>
     </div>  
-    </div>   
-     
-      
-      
-      
-      
+    </div>  
       
       
     </div>    
+
+<!-- Footer -->
+<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer footer">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-xs-12"><p class="text-white text-center footer-alignement"></p></div>
+        </div>
+    </div>
+</footer>
 
 
     <!-- Optional JavaScript -->
