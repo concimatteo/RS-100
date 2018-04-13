@@ -4,7 +4,7 @@
 }
 
 .label-typ {
-    font-weight: 500;
+    font-weight: 200;
 }
 
 .form-caricamento {
@@ -25,6 +25,15 @@
     margin-bottom:40px;
     font-weight: 200;
     font-size: 25;
+}
+
+.errore {
+    margin-top:40px;
+    margin-bottom:40px;
+    font-weight: 200;
+    font-size: 25;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7)
 }
 
 .background-header{
@@ -79,8 +88,14 @@
 
   }
 
-  
+  .row-immagini-centenario{
+      height: 30px;
+  }
 
+  .form-layout{
+      background-color: rgba(255, 255, 255, 0.8);
+      padding:10px;
+  }
 
   
 @media (max-width:575px){

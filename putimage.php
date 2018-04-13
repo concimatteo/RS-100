@@ -194,9 +194,9 @@ if(!$db)
 }
 
 if ($db->query('CREATE TABLE IF NOT EXISTS immagini (id INTEGER PRIMARY KEY, gruppo TEXT, descrizione TEXT, nomefile TEXT, chiave TEXT, stato INTEGER, Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)')) {
-    echo "Query successful."; // Works
+    include("confirm.php"); // Works
 } else {
-    echo "Query failed."; // Will also work
+    include("error.php"); // Will also work
 }
 
 /*

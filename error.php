@@ -34,9 +34,9 @@
 
       
       <div class="container-fluid">
-        <div class=row>
-        <div class="col">
-            <h3 class="ringraziamento">Grazie per aver caricato la tua immagine!</h3>
+        <div class="row">
+        <div class="col-md-8 col-xs-12 ">
+            <h1 class="errore">Purtoppo c'è stato un problema con il caricamento della tua immagine! Prova ancora!</h1>
         </div>
         </div>   
       
@@ -48,7 +48,7 @@
                 <a href="immagini.php" class="btn btn-warning btn-lg btn-block label-typ" type="link" >Visualizza le immagini caricate</a>
             </div>
             <div class="col-6">
-                    <a href="index.html" class="btn btn-success btn-lg btn-block label-typ" type="link" >Torna alla home</a>
+                    <a href="home.html" class="btn btn-success btn-lg btn-block label-typ" type="link" >Torna alla home</a>
                 </div>
         </div>
       

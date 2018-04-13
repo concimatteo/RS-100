@@ -37,6 +37,9 @@
 
 <!-- Corpo --> 
 <div class="container-fluid">
+
+<div class="row row-immagini-centenario"></div>
+
 <div class="row justify-content-center">
 <div class="col-md-10 col-xs-12">
 
@@ -59,14 +62,35 @@ while ($row = $results->fetchArray()) {
     $gruppo = $row['gruppo'];
     $descrizione = $row['descrizione'];
     $nomefile = $row['nomefile'];
-
+    $chiave = $row['chiave'];
    
     echo "<div class='card'>";
-    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#ModalImmagine'></img>";
+    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#$chiave'></img>";
     echo "<div class='card-body'>";
     echo "<h5 class='card-title'>$gruppo</h5>";
     echo "<p class='card-text'>$descrizione</p>";
     echo "</div>";
+    echo "</div>";
+
+
+    echo "<div class='modal fade' id='$chiave' tabindex='-1' role='dialog' aria-labelledby='ModalImmagineTitle' aria-hidden='true'>";
+      echo "<div class='modal-dialog modal-dialog-centered modal-lg' role='document'>";
+        echo "<div class='modal-content'>";
+          echo "<div class='modal-header'>";
+            echo "<h5 class='modal-title' id='ModalImmagineTitle'>$gruppo</h5>";
+              echo "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+              echo "<span aria-hidden='true'>&times;</span>";
+              echo "</button>";
+          echo "</div>";
+          echo "<div class='modal-body'>";
+            echo "<img src='immagini/$nomefile' class='col-12'";
+          echo "</div>";
+          echo "<div class='modal-footer'>";
+            echo "<p>$descrizione</p>";
+          echo "</div>";
+        echo "</div>";
+       echo "</div>";
+      echo "</div>";
     echo "</div>";
 
     }
@@ -74,24 +98,7 @@ while ($row = $results->fetchArray()) {
 
 </div>
 
-<div class="modal fade" id="ModalImmagine" tabindex="-1" role="dialog" aria-labelledby="ModalImmagineTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalImmagineTitle"><?php echo $gruppo;?></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <?php echo "<img src='immagini/$nomefile' class='col-12'"; ?>
-      </div>
-      <div class="modal-footer">
-      <?php echo $descrizione;?>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 </article>
 
