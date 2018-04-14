@@ -16,65 +16,41 @@
   <body style="background-image: url(img/body-background.png);" class="body-background">
 
     <!-- Header --> 
-            <header style="background-image: url(img/header-watercolor.png)" class="background-header">
-                <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <!-- Visible on MD --> 
-                        <div class="col-3 d-none d-sm-block"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
-                        <div class="col-6 align-self-center align-content-center d-none d-sm-block"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image" alt="Responsive image"></div>
-                        <div class="col-3 d-none d-sm-block"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
-                        <!-- Visible on XS -->
-                        <div class="col-12 align-self-center align-content-center d-block d-sm-none"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image-XS" alt="Responsive image"></div>
-                        <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></div>
-                        <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></div>
-                    </div>
-                    
+    <header style="background-image: url(img/header-watercolor.png)" class="background-header">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <!-- Visible on MD --> 
+                    <div class="col-3 d-none d-sm-block"> <a href="https://www.scout.org/rovers100"><img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image" ></a></div>
+                    <div class="col-6 align-self-center align-content-center d-none d-sm-block"> <a href="home.html"><img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image" alt="Responsive image"></a></div>
+                    <div class="col-3 d-none d-sm-block"> <a href="http://www.scouteguide.it/"><img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></a></div>
+                    <!-- Visible on XS -->
+                    <div class="col-12 align-self-center align-content-center d-block d-sm-none"> <a href="https://www.scout.org/rovers100"> <img src="./img/centenario-roversimo-title-white.png" class="img-fluid title-image-XS" alt="Responsive image"></a></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <a href="home.html"><img src="./img/rovers100-watercolor-spot.png" class="img-fluid rounded header-image" alt="Responsive image"></a></div>
+                    <div class="col-6 align-self-center align-content-center d-block d-sm-none"> <a href="http://www.scouteguide.it/"><img src="./img/fis-watercolor-spot.png" class="img-fluid rounded header-image float-right" alt="Responsive image"></a></div>
                 </div>
-            </header>
+                
+            </div>
+        </header>
 
       
       <div class="container-fluid">
         <div class=row>
-        <div class="col">
-            <h3 class="ringraziamento">Grazie per aver caricato la tua immagine!</h3>
+        <div class="col-md-offset-1 col-md-6 col-xs-12 background-transparency">
+            <h2 class="ringraziamento">Grazie per aver caricato la tua fotografia!</h2>
+            <p class="">L'immagine adesso verrà verificata e sarà pubblicata al più presto.</p>
         </div>
         </div>   
       
 
-<?php
 
-$db = new SQLite3('RS.db');
-if(!$db)
-{
-    die("Errore Sqlite: ");
-}
-
-$results = $db->query('SELECT * FROM immagini');
-
-while ($row = $results->fetchArray()) {
-    $gruppo = $row['gruppo'];
-    $descrizione = $row['descrizione'];
-    $nomefile = $row['nomefile'];
-    $chiave = $row['chiave'];
-   
-    echo "<div class='card'>";
-    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#$chiave'></img>";
-    echo "<div class='card-body'>";
-    echo "<h5 class='card-title'>$gruppo</h5>";
-    echo "<p class='card-text'>$descrizione</p>";
-    echo "</div>";
-    echo "</div>";
-    
-}
-?>
 
         
         <!-- Pulsante di invio-->
         <div class="row pulsante-submit">
-            <div class="col-6">
+            <div class="col">
                 <a href="immagini.php" class="btn btn-warning btn-lg btn-block label-typ" type="link" >Visualizza le immagini caricate</a>
             </div>
-            <div class="col-6">
+            <div class="col">
                     <a href="home.html" class="btn btn-success btn-lg btn-block label-typ" type="link" >Torna alla home</a>
                 </div>
         </div>
