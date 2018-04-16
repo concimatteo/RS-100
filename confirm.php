@@ -35,9 +35,10 @@
       
       <div class="container-fluid">
         <div class=row>
-        <div class="col-md-offset-1 col-md-6 col-xs-12 background-transparency">
+        <div class="col-md-6 col-xs-12 background-transparency">
             <h2 class="ringraziamento">Grazie per aver caricato la tua fotografia!</h2>
             <p class="">L'immagine adesso verrà verificata e sarà pubblicata al più presto.</p>
+            <p class="">Qui sotto potete visualizzare la vostra foto con applicata la splendida cornice del centenario.</p>
         </div>
         </div>   
       
@@ -46,11 +47,11 @@
 
         
         <!-- Pulsante di invio-->
-        <div class="row pulsante-submit">
-            <div class="col">
+        <div class="row pulsante-submit justify-content-center">
+            <div class="col-md-3">
                 <a href="immagini.php" class="btn btn-warning btn-lg btn-block label-typ" type="link" >Visualizza le immagini caricate</a>
             </div>
-            <div class="col">
+            <div class="col-md-3">
                     <a href="home.html" class="btn btn-success btn-lg btn-block label-typ" type="link" >Torna alla home</a>
                 </div>
         </div>
@@ -59,14 +60,7 @@
         </div>    
 
 
-<!-- Footer -->
-<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer footer">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-xs-12"><p class="text-white text-center footer-alignement"></p></div>
-        </div>
-    </div>
-</footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

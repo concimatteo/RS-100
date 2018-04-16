@@ -1,3 +1,4 @@
+
 <?php
 //Funzioni utili:
 error_reporting(E_ALL);
@@ -207,12 +208,40 @@ imposta stato a "pendente" e manda mail con link con cui approvare la foto o dec
 $gruppo = $_POST['gruppo'];
 $descrizione = $_POST['descrizione'];
 $chiave=generateRandomString()."-".time();
-echo $chiave;
 
 if ($db->query("INSERT INTO immagini (gruppo, descrizione, nomefile, chiave, stato) VALUES ('$gruppo','$descrizione','$filename','$chiave',0)")) {
-echo "Query successful."; // Works
+echo "<html>";
+echo "<head>";
+echo "<meta charset='utf-8'>";
+echo "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
+echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>"; 
+echo "<link rel='stylesheet' href='css/style.css' >"; 
+echo "</head>";
+echo "<body>"; 
+echo "<div class='container-fluid'>";
+echo "<div class='row justify-content-center'>";
+echo "<div class='col'>";
+echo "<img src='http://localhost:8888/rover100/immagini/$filename' class='img-fluid'>"; // Works
+echo "</div>";
+echo "<div class='col'>";
+
+echo "</div>";
+echo "</div>";
+echo "</div>";
+echo "<footer style='background-image: url(img/footer-watercolor.png)' class='background-footer'>";
+echo "<div class='container-fluid'>";
+echo "<div class='row justify-content-center'>";
+echo "<div class='col-md-6 col-xs-12'><p class='text-white text-center footer-alignement'></p></div>";
+echo "</div>";
+echo "</div>";
+echo "</footer>";
+echo "</body";
+echo "</html>";
+
+
+
 } else {
-    echo "Query failed."; // Will also work
+    include("error.php"); // Will also work
 }
 
 //INVIO EMAIL!
@@ -261,12 +290,5 @@ $message .= "Content-Type: image/jpeg; name=\"http://localhost:8888/rover100/imm
 .$bound_last;
 
 echo mail("concimatteo@gmail.com", "Modera!", $message, $headers) ;
-
-
-
-
-
-
-
 
 ?>
