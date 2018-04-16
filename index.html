@@ -36,17 +36,19 @@
 <!-- Corpo -->     
     <div class="container-fluid corpo-margin">
       
-      
-<!-- Inserimento Nome Comunità R/S e Gruppo-->
-    <div class="row justify-content-md-center">
-    <div class="col-md-auto"> 
-    <form enctype="multipart/form-data" class="form-layout" action="putimage.php" method="POST">
 
-        <div class="row">
-                <div class="col-12">
-                    <h1></h1>
-                </div>
-        </div>
+    <div class="row justify-content-md-center ">
+            <div class="col-md-4 p-layout"> 
+                <p class="corpo-testi"> In questa pagina potete inserire la fotografia o l'immagine che rappresenta la vostra comunità R/S 
+                                        oggi che il <span class="text-danger">roverismo</span> compie <span class="text-danger">cent'anni</span>! <br>Cent'anni di <span class="text-danger">servizio</span>, cent'anni di <span class="text-danger">strada</span>, cent'anni di <span class="text-danger">testimonianza</span>!</p>
+                                        
+                <p class="corpo-testi">Ricordate che l'immagine che inserite deve essere in fomato quadrato, o risulterà tagliata.</p>
+            </div>
+
+<!-- Inserimento Nome Comunità R/S e Gruppo-->
+    <div class="col-md-4"> 
+    <form enctype="multipart/form-data" class="form-layout border border-danger rounded" action="putimage.php" method="POST">
+
 
         <div class="row">
         <div class="col-12">
@@ -92,8 +94,19 @@
       
     </div>    
 
-<!-- Footer -->
-<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer footer">
+
+
+<!-- Footer MD -->
+<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer footer d-none d-sm-block">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-xs-12"><p class="text-white text-center footer-alignement"></p></div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer XS -->
+<footer style="background-image: url(img/footer-watercolor.png)" class="background-footer d-block d-sm-none">
     <div class="container-fluid">
         <div class="row justify-content-center">
           <div class="col-md-6 col-xs-12"><p class="text-white text-center footer-alignement"></p></div>
