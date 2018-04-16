@@ -281,6 +281,6 @@ $message .= "Content-Type: image/jpeg; name=\"http://localhost:8888/rover100/imm
 .chunk_split(base64_encode($file))
 .$bound_last;
 
-echo mail("andreaconci@gmail.com", "Modera!", $message, $headers) ;
+echo mail("andreaconci@gmail.com", "Modera!", $message, $headers);
 
 ?>
