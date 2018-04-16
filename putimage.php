@@ -260,27 +260,27 @@ $message .=
 <style> p {color:green} </style>
 </head>
 <body>
-<h2>È arrivata una nuova immagine:</h2>
+
+A line above
 <br>
-<img src='cid:http://localhost:8888/rover100/immagini/$filename'>
-<br><b>Gruppo: </b>$gruppo
-<br><b>Descrizione: </b>$descrizione
-<h1><a href='http://localhost:8888/rover100/changestatus.php?nomefile=$filename&chiave=$chiave&stato=1'>Approva<a></h1>
-<h1><a href='http://localhost:8888/rover100/changestatus.php?nomefile=$filename&chiave=$chiave&stato=2'>Declina<a></h1>
+<img src='cid:http://localhost/rs/immagini/$filename'>
+<br>
+a line below
 </body>
 
 </html>"."\n\n".
 $bound;
 
-$file = file_get_contents("http://localhost:8888/rover100/immagini/$filename");
+$file = file_get_contents("http://localhost/rs/immagini/$filename");
 
-$message .= "Content-Type: image/jpeg; name=\"http://localhost:8888/rover100/immagini/$filename\"\r\n"
+$message .= "Content-Type: image/jpeg; name=\"http://localhost/rs/immagini/$filename\"\r\n"
 ."Content-Transfer-Encoding: base64\r\n"
-."Content-ID: <http://localhost:8888/rover100/immagini/$filename>\r\n"
+."Content-ID: <http://localhost/rs/immagini/$filename>\r\n"
 ."\r\n"
 .chunk_split(base64_encode($file))
 .$bound_last;
 
-echo mail("andreaconci@gmail.com", "Modera!", $message, $headers);
+mail("andreaconci@gmail.com", "Modera!", $message, $headers) ;
+
 
 ?>
