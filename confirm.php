@@ -34,7 +34,7 @@
 
       
       <div class="container-fluid">
-        <div class=row>
+        <div class="row justify-content-center">
         <div class="col-md-6 col-xs-12 background-transparency">
             <h2 class="ringraziamento">Grazie per aver caricato la tua fotografia!</h2>
             <p class="">L'immagine adesso verrà verificata e sarà pubblicata al più presto.</p>

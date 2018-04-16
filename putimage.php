@@ -220,21 +220,13 @@ echo "</head>";
 echo "<body>"; 
 echo "<div class='container-fluid'>";
 echo "<div class='row justify-content-center'>";
-echo "<div class='col'>";
+echo "<div class='col-md-6'>";
+echo "<br>";
 echo "<img src='http://localhost:8888/rover100/immagini/$filename' class='img-fluid'>"; // Works
 echo "</div>";
-echo "<div class='col'>";
-
 echo "</div>";
 echo "</div>";
 echo "</div>";
-echo "<footer style='background-image: url(img/footer-watercolor.png)' class='background-footer'>";
-echo "<div class='container-fluid'>";
-echo "<div class='row justify-content-center'>";
-echo "<div class='col-md-6 col-xs-12'><p class='text-white text-center footer-alignement'></p></div>";
-echo "</div>";
-echo "</div>";
-echo "</footer>";
 echo "</body";
 echo "</html>";
 
@@ -268,7 +260,7 @@ $message .=
 <style> p {color:green} </style>
 </head>
 <body>
-È arrivata una nuova immagine:
+<h2>È arrivata una nuova immagine:</h2>
 <br>
 <img src='cid:http://localhost:8888/rover100/immagini/$filename'>
 <br><b>Gruppo: </b>$gruppo
@@ -289,6 +281,6 @@ $message .= "Content-Type: image/jpeg; name=\"http://localhost:8888/rover100/imm
 .chunk_split(base64_encode($file))
 .$bound_last;
 
-echo mail("concimatteo@gmail.com", "Modera!", $message, $headers) ;
+echo mail("andreaconci@gmail.com", "Modera!", $message, $headers) ;
 
 ?>
