@@ -63,9 +63,9 @@ while ($row = $results->fetchArray()) {
     $descrizione = $row['descrizione'];
     $nomefile = $row['nomefile'];
     $chiave = $row['chiave'];
-   
+
     echo "<div class='card'>";
-    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#$chiave'></img>";
+    echo "<img src='immagini/$nomefile'  class='card-img-top' type='button' data-toggle='modal' data-target='#$nomefile'></img>";
     echo "<div class='card-body'>";
     echo "<h5 class='card-title'>$gruppo</h5>";
     echo "<p class='card-text'>$descrizione</p>";
@@ -73,7 +73,7 @@ while ($row = $results->fetchArray()) {
     echo "</div>";
 
 
-    echo "<div class='modal fade' id='$chiave' tabindex='-1' role='dialog' aria-labelledby='ModalImmagineTitle' aria-hidden='true'>";
+    echo "<div class='modal fade' id='$nomefile' tabindex='-1' role='dialog' aria-labelledby='ModalImmagineTitle' aria-hidden='true'>";
       echo "<div class='modal-dialog modal-dialog-centered modal-lg' role='document'>";
         echo "<div class='modal-content'>";
           echo "<div class='modal-header'>";
@@ -92,6 +92,17 @@ while ($row = $results->fetchArray()) {
        echo "</div>";
       echo "</div>";
     echo "</div>";
+  echo "$nomefile";
+
+
+htmlspecialchars($_GET['img']);
+   $img = ['img']; 
+
+   if($img = $nomefile){
+  echo "<script>$(document).ready(function(){ $('#$img').modal('show');}</script>";
+} else {
+
+}
 
     }
     ?>
@@ -116,6 +127,7 @@ while ($row = $results->fetchArray()) {
     </div>
 </footer>
 
+<!-- Funzioni -->
 
 <script>
 $('.grid').masonry({
