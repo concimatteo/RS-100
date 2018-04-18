@@ -210,6 +210,7 @@ $descrizione = $_POST['descrizione'];
 $chiave=generateRandomString()."-".time();
 
 if ($db->query("INSERT INTO immagini (gruppo, descrizione, nomefile, chiave, stato) VALUES ('$gruppo','$descrizione','$filename','$chiave',0)")) {
+
 echo "<html>";
 echo "<head>";
 echo "<meta charset='utf-8'>";
@@ -222,7 +223,7 @@ echo "<div class='container-fluid'>";
 echo "<div class='row justify-content-center'>";
 echo "<div class='col-md-6'>";
 echo "<br>";
-echo "<img src='http://localhost:8888/rover100/immagini/$filename' class='img-fluid'>"; // Works
+echo "<img src='http://localhost/rover100/immagini/$filename' class='img-fluid'>"; // Works
 echo "</div>";
 echo "</div>";
 echo "</div>";
@@ -261,9 +262,9 @@ $message .=
 </head>
 <body>
 
-A line above
+Immagine $filename
 <br>
-<img src='cid:http://localhost/rs/immagini/$filename'>
+<img src='cid:http://localhost/rover100/immagini/$filename'>
 <br>
 a line below
 </body>
@@ -271,16 +272,16 @@ a line below
 </html>"."\n\n".
 $bound;
 
-$file = file_get_contents("http://localhost/rs/immagini/$filename");
+$file = file_get_contents("http://localhost/rover100/immagini/$filename");
 
-$message .= "Content-Type: image/jpeg; name=\"http://localhost/rs/immagini/$filename\"\r\n"
+$message .= "Content-Type: image/jpeg; name=\"http://localhost/rover100/immagini/$filename\"\r\n"
 ."Content-Transfer-Encoding: base64\r\n"
-."Content-ID: <http://localhost/rs/immagini/$filename>\r\n"
+."Content-ID: <http://localhost/rover100/immagini/$filename>\r\n"
 ."\r\n"
 .chunk_split(base64_encode($file))
 .$bound_last;
 
-mail("andreaconci@gmail.com", "Modera!", $message, $headers) ;
+mail("andreaconci@gmail.com", "Rovers100: Modera $filename", $message, $headers) ;
 
 
 ?>

@@ -5,6 +5,8 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
 
 
 
@@ -14,6 +16,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
 
+<!-- Share Script-->
 </head>
 
 <body style="background-image: url(img/body-background.png);" class="body-background">
@@ -89,8 +92,14 @@ while ($row = $results->fetchArray()) {
           echo "</div>";
           echo "<div class='modal-footer'>";
             echo "<p>$descrizione</p>";
-            // Your Facebook share button code
           echo "</div>";
+          echo "<div class='container-fluid'><div class='row'><div class='col'>";
+          echo "<div class='a2a_kit a2a_kit_size_50 a2a_default_style' data-a2a-url='localhost/rover100/immagini.php?img=$nomefile' data-a2a-title='Centenario dello Scoutismo' data-a2a-img='immagini/$nomefile'>
+          <a class='a2a_button_facebook'></a>
+          <a class='a2a_button_twitter'></a>
+          <a class='a2a_button_google_plus'></a>
+          </div>";
+          echo "</div></div></div>";
         echo "</div>";
        echo "</div>";
       echo "</div>";
@@ -111,13 +120,18 @@ while ($row = $results->fetchArray()) {
   $idauto = substr($_GET['img'], 0, -4);  
   echo "<script type='text/javascript'>$(window).on('load',function(){
   $('#$idauto').modal('$show');
-  });</script>"
+  });</script>";
 
+  
     ?>
 
+    
 
 </div>
 </article>
+
+
+
 
 </div>
 </div>
@@ -133,6 +147,8 @@ while ($row = $results->fetchArray()) {
 </footer>
 
 <!-- Funzioni -->
+
+
 
 <script>
 $('.grid').masonry({
