@@ -6,13 +6,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
+
 <style>.grid-item { width: 300px; margin-bottom:15px; }</style>
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
-
-<!-- Facebook Meta -->
 
 </head>
 
@@ -89,32 +89,35 @@ while ($row = $results->fetchArray()) {
           echo "</div>";
           echo "<div class='modal-footer'>";
             echo "<p>$descrizione</p>";
+            // Your Facebook share button code
           echo "</div>";
         echo "</div>";
        echo "</div>";
       echo "</div>";
     echo "</div>";
-  //echo "$nomefile";
-
-
-   
-
-    }
-
-    if($_GET['img'] != ""){
-      $img = substr($_GET['img'], 0, -4);
-    echo "<script>$(document).ready(function(){ $('#$img').modal('toggle');})</script>";
   
-  } else {
   
+  // Verifica la presenza di url
+  
+  if ($_GET['img'] != "" ){
+    $show = 'show';
+    } else {
+      $show = '';
+    }  
+
   }
+
+  // Lancia il Modal
+  $idauto = substr($_GET['img'], 0, -4);  
+  echo "<script type='text/javascript'>$(window).on('load',function(){
+  $('#$idauto').modal('$show');
+  });</script>"
+
     ?>
 
 
 </div>
 </article>
-
-
 
 </div>
 </div>
