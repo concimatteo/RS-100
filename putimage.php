@@ -272,7 +272,7 @@ a line below
 </html>"."\n\n".
 $bound;
 
-$file = file_get_contents("http://localhost/rover100/immagini/$filename");
+$file = file_get_contents("immagini/$filename");
 
 $message .= "Content-Type: image/jpeg; name=\"http://localhost/rover100/immagini/$filename\"\r\n"
 ."Content-Transfer-Encoding: base64\r\n"
