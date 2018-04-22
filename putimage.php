@@ -3,7 +3,12 @@
 //Funzioni utili:
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require 'lib/PHPMailer/src/Exception.php';
+require 'lib/PHPMailer/src/PHPMailer.php';
+require 'lib/PHPMailer/src/SMTP.php';
 
 function generateRandomString($length = 32) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -237,51 +242,42 @@ echo "</html>";
     include("error.php"); // Will also work
 }
 
-//INVIO EMAIL!
+//INVIO EMAIL <IMAP:></IMAP:>
 
-$bound_text = "----*%$!$%*";
-$bound = "--".$bound_text."\r\n";
-$bound_last = "--".$bound_text."--\r\n";
+$htmlmessage = "
 
-$headers = "From: youremail@host.com\r\n";
-$headers .= "MIME-Version: 1.0\r\n" .
-"Content-Type: multipart/mixed; boundary=\"$bound_text\""."\r\n" ;
+<img src='cid:immagine'>
 
-$message = " you may wish to enable your email program to accept HTML \r\n".
-$bound;
+";
 
-$message .=
-'Content-Type: text/html; charset=UTF-8'."\r\n".
-'Content-Transfer-Encoding: 7bit'."\r\n\r\n".
-"
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.mailgun.org';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'postmaster@mail.canzoniereonline.it';                 // SMTP username
+    $mail->Password = '575850eb3db71c519afa5ba04756ec54';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
 
-<html>
+    //Recipients
+    $mail->setFrom('from@example.com', 'Mailer');
+    $mail->addAddress('concimatteo@gmail.com');               // Name is optional
 
-<head>
-<style> p {color:green} </style>
-</head>
-<body>
+    //Attachments
+    $mail->addAttachment("immagini/$filename",'immagine');         // Add attachments
 
-Immagine $filename
-<br>
-<img src='cid:http://localhost/rover100/immagini/$filename'>
-<br>
-a line below
-</body>
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = $htmlmessage;
 
-</html>"."\n\n".
-$bound;
-
-$file = file_get_contents("immagini/$filename");
-
-$message .= "Content-Type: image/jpeg; name=\"http://localhost/rover100/immagini/$filename\"\r\n"
-."Content-Transfer-Encoding: base64\r\n"
-."Content-ID: <http://localhost/rover100/immagini/$filename>\r\n"
-."\r\n"
-.chunk_split(base64_encode($file))
-.$bound_last;
-
-mail("andreaconci@gmail.com", "Rovers100: Modera $filename", $message, $headers) ;
-
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
 
 ?>
