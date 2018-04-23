@@ -277,11 +277,11 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'Nuova Immagine | Centenario del Roverismo';
     $mail->Body    = $htmlmessage;
 
     $mail->send();
-    echo 'Message has been sent';
+    echo '<br><h2>Message has been sent<h2>';
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
