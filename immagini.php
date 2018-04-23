@@ -19,7 +19,7 @@
 <!-- Share Script-->
 </head>
 
-<body style="background-image: url(img/body-background.png);" class="body-background">
+<body style="background-image: url(img/body-background.png);" class="body-background-home">
 
 
 <!-- Header --> 
