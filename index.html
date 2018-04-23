@@ -18,7 +18,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- Enable Popover -->  
-   
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        function onSubmit(token) {
+          document.getElementById("modulo-immagine").submit();
+        }
+      </script>
    <title>Centenario del Roverismo</title>
   
 </head>
@@ -59,7 +64,7 @@
 
 <!-- Inserimento Nome Comunità R/S e Gruppo-->
     <div class="col-md-4"> 
-    <form enctype="multipart/form-data" class="form-layout border border-danger rounded" action="putimage.php" method="POST">
+    <form enctype="multipart/form-data" class="form-layout border border-danger rounded" action="putimage.php" method="POST" id="modulo-immagine">
 
 
         <div class="row">
@@ -95,7 +100,9 @@
         <!-- Pulsante di invio-->
         <div class="row pulsante-submit">
             <div class="col-12">
-            <input class="btn btn-success btn-lg btn-block label-typ" type="submit" value="Invia la foto">
+            <button class="btn btn-success btn-lg btn-block label-typ" class="g-recaptcha"
+            data-sitekey="6LeU2VQUAAAAALoHOtp2lHJRKhnDY_YgMnVZ53W3"
+            data-callback="YourOnSubmitFn">Invia la foto</button>
             </div>
         </div>
         
