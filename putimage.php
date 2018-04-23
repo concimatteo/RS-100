@@ -228,7 +228,7 @@ echo "<div class='container-fluid'>";
 echo "<div class='row justify-content-center'>";
 echo "<div class='col-md-6'>";
 echo "<br>";
-echo "<img src='http://localhost/rover100/immagini/$filename' class='img-fluid'>"; // Works
+echo "<img src='immagini/$filename' class='img-fluid'>"; // Works
 echo "</div>";
 echo "</div>";
 echo "</div>";
