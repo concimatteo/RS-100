@@ -245,9 +245,14 @@ echo "</html>";
 //INVIO EMAIL <IMAP:></IMAP:>
 
 $htmlmessage = "
-
+<p>È arrivata una nuova immagine da moderare.</p>
+<br>
 <img src='cid:immagine'>
-
+<br>
+<h3>Gruppo:</h3> $gruppo
+<h3>Descrizione:</h3> $descrizione
+<br>
+<a href='../changestatus.php?nomefile=$filename&chiave=$chiave&stato=1' type='button'>Approva<a> | <a href='../changestatus.php?nomefile=$filename&chiave=$chiave&stato=2' type='button'>Declina<a> | <a href='../changestatus.php?nomefile=$filename&chiave=$chiave&stato=0' type='button'>Metti in attesa<a>
 ";
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
@@ -264,6 +269,7 @@ try {
 
     //Recipients
     $mail->setFrom('from@example.com', 'Mailer');
+    $mail->addAddress('andreaconci@gmail.com');
     $mail->addAddress('concimatteo@gmail.com');               // Name is optional
 
     //Attachments

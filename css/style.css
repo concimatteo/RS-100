@@ -52,8 +52,18 @@
 
 .body-background{
     background-position:center;
-    background-size: 100% ;
+    background-size: 120%;
     background-repeat: repeat-y;
+    background-position-y: 200px;
+
+}
+
+.body-background-home{
+    background-position:center;
+    background-size: 120%;
+    background-repeat: repeat-y;
+    background-position-y: 200px;
+    opacity: 20%;
 
 }
 
@@ -146,6 +156,10 @@
   .btn-banner{
         margin-left:20px;
         margin-right:20px;
+  }
+
+  .rotate-img{
+    transform: rotate(-10deg);  
   }
 
 @media (max-width:575px){
