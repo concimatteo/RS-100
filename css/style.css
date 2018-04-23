@@ -104,6 +104,10 @@
     padding:10px;
 }
 
+.div-layout{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 .transparency-col{
     background-color: rgba(255, 255, 255, 0.9);
     padding:10px;
@@ -127,7 +131,8 @@
   .button-fixed-bottom {
     margin-bottom:30px;
     margin-right: 10px;
-    float: right;
+    border-radius: 4px;
+    padding:5px;
   }
   
 @media (max-width:575px){
